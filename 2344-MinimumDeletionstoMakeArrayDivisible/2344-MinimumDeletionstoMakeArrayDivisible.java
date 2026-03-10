@@ -1,4 +1,4 @@
-// Last updated: 3/10/2026, 11:11:40 AM
+// Last updated: 3/10/2026, 11:12:12 AM
 1class Solution {
 2    public static int gcd(int a,int b){
 3        if(b==0){
