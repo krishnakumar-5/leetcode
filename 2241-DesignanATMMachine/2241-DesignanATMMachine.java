@@ -1,4 +1,4 @@
-// Last updated: 3/11/2026, 11:54:51 AM
+// Last updated: 3/11/2026, 11:56:57 AM
 1class ATM {
 2    private long[]notes=new long[5];
 3    private int[] values={20,50,100,200,500};
