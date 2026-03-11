@@ -1,4 +1,4 @@
-// Last updated: 3/11/2026, 12:07:45 PM
+// Last updated: 3/11/2026, 12:08:54 PM
 1class Solution {
 2    public int bitwiseComplement(int n) {
 3        String str=Integer.toBinaryString(n);
@@ -10,7 +10,6 @@
 9                res+="0";
 10            }
 11        } 
-12        int num=Integer.parseInt(res,2);
-13        return num;       
-14    }
-15}
+12        return(Integer.parseInt(res,2));
+13    }
+14}
