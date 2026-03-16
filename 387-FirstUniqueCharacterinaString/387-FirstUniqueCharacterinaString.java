@@ -1,4 +1,4 @@
-// Last updated: 3/16/2026, 1:41:36 PM
+// Last updated: 3/16/2026, 1:41:48 PM
 1class Solution {
 2    public int firstUniqChar(String s) {
 3        Map<Character,Integer> map=new LinkedHashMap<>();
