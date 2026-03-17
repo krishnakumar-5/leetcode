@@ -1,4 +1,4 @@
-// Last updated: 3/17/2026, 2:24:34 PM
+// Last updated: 3/17/2026, 2:24:56 PM
 1import java.util.*;
 2class MinStack {
 3    Stack<Integer> st;
@@ -18,9 +18,9 @@
 17    
 18    public void pop() {
 19        int num=st.pop();
-20            if(num==minst.peek()){
-21                minst.pop();
-22            }
+20        if(num==minst.peek()){
+21            minst.pop();
+22        }
 23        
 24    }
 25    
