@@ -1,4 +1,4 @@
-// Last updated: 3/17/2026, 2:18:57 PM
+// Last updated: 3/17/2026, 2:19:45 PM
 1class StockSpanner {
 2    static {
 3        Runtime.getRuntime().gc();
@@ -17,7 +17,7 @@
 16    public int next(int price) {
 17        st.push(price);
 18        int k=st.peek();
-19        int c=0;
+19        int c=1;
 20        for(int i=st.size()-2;i>=0;i--){
 21            if(k>=st.get(i)){
 22                c++;
@@ -25,7 +25,7 @@
 24                break;
 25            }
 26        }
-27        return (c+1);
+27        return (c);
 28    }
 29}
 30
