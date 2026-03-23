@@ -1,4 +1,4 @@
-// Last updated: 3/23/2026, 6:55:28 PM
+// Last updated: 3/23/2026, 6:56:11 PM
 1/**
 2 * Definition for singly-linked list.
 3 * public class ListNode {
@@ -24,7 +24,7 @@
 23            c++;
 24        }
 25        k=k%c;
-26        while(k!=0){
+26        for(int i=0;i<k;i++){
 27            ListNode temp=head;
 28            while(temp.next.next!=null){
 29                temp=temp.next;
@@ -32,7 +32,7 @@
 31            temp.next.next=head;
 32            head=temp.next;
 33            temp.next=null;
-34            k--;
+34            
 35        }
 36         
 37        return head;
