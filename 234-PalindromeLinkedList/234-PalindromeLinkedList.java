@@ -1,4 +1,4 @@
-// Last updated: 3/23/2026, 2:39:38 PM
+// Last updated: 3/23/2026, 2:43:59 PM
 1/**
 2 * Definition for singly-linked list.
 3 * public class ListNode {
@@ -19,24 +19,22 @@
 18        }
 19        ListNode firsthalf=head;
 20        ListNode secondhalf=slow.next;
-21        slow.next=null;
-22        ListNode prev=null;
-23        ListNode cur=secondhalf;
-24        ListNode next=null;
-25        while(cur!=null){
-26            next=cur.next;
-27            cur.next=prev;
-28            prev=cur;
-29            cur=next;
-30        }
-31        while(firsthalf!=null&&prev!=null){
-32            if(firsthalf.val!=prev.val){
-33                return false;
-34            }
-35            firsthalf=firsthalf.next;
-36            prev=prev.next;
-37        }
-38        return true;
-39
-40    }
-41}
+21        ListNode prev=null;
+22        ListNode cur=secondhalf;
+23        ListNode next=null;
+24        while(cur!=null){
+25            next=cur.next;
+26            cur.next=prev;
+27            prev=cur;
+28            cur=next;
+29        }
+30        while(firsthalf!=null&&prev!=null){
+31            if(firsthalf.val!=prev.val)
+32                return false;
+33            firsthalf=firsthalf.next;
+34            prev=prev.next;
+35        }
+36        return true;
+37
+38    }
+39}
