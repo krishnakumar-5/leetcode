@@ -1,4 +1,4 @@
-// Last updated: 3/23/2026, 12:02:17 PM
+// Last updated: 3/23/2026, 12:03:08 PM
 1/**
 2 * Definition for singly-linked list.
 3 * public class ListNode {
@@ -11,14 +11,14 @@
 10 */
 11class Solution {
 12    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
-13        if(list1==null&&list2==null){
+13        if(list1==null&&list2==null)
 14            return null;
-15        }else{
-16            if(list1==null){
+15        else{
+16            if(list1==null)
 17                return list2;
-18            }else if(list2==null){
+18            else if(list2==null)
 19                return list1;
-20            }else{
+20            else{
 21                ListNode dum=new ListNode(0);
 22                ListNode temp=dum;
 23                ListNode c1=list1;
