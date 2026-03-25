@@ -1,4 +1,4 @@
-// Last updated: 3/25/2026, 10:15:00 AM
+// Last updated: 3/25/2026, 10:15:34 AM
 1/*
 2// Definition for a Node.
 3class Node {
@@ -26,7 +26,7 @@
 25                }
 26                if(up!=null){
 27                    cur.next=up;
-28                    cur.next.prev=cur;
+28                    up.prev=cur;
 29                }
 30            }
 31            cur=cur.next;
