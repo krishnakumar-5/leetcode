@@ -1,4 +1,4 @@
-// Last updated: 3/25/2026, 8:28:15 PM
+// Last updated: 3/25/2026, 8:28:51 PM
 1class Solution {
 2    public int calPoints(String[] operations) {
 3        Stack<Integer> stack=new Stack<>();
@@ -13,28 +13,25 @@
 12                        stack.push(b);
 13                        stack.push(a);
 14                        stack.push(a+b);
-15                        System.out.println(stack);
-16                        break;
-17                    case "D":
-18                        int c=stack.pop();
-19                        stack.push(c);
-20                        stack.push(c*2);
-21                        System.out.println(stack);
-22                        break;
-23                    case "C":
-24                        stack.pop();
-25                        System.out.println(stack);
-26                        break;
-27                }
-28            }
+15                        break;
+16                    case "D":
+17                        int c=stack.pop();
+18                        stack.push(c);
+19                        stack.push(c*2);
+20                        break;
+21                    case "C":
+22                        stack.pop();
+23                        break;
+24                }
+25            }
+26        }
+27        if(stack.isEmpty()){
+28            return 0;
 29        }
-30        if(stack.isEmpty()){
-31            return 0;
-32        }
-33        int sum=0;
-34        while(!stack.isEmpty()){
-35            sum+=stack.pop();
-36        }
-37        return sum;
-38    }
-39}
+30        int sum=0;
+31        while(!stack.isEmpty()){
+32            sum+=stack.pop();
+33        }
+34        return sum;
+35    }
+36}
