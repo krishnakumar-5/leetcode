@@ -1,4 +1,4 @@
-// Last updated: 3/25/2026, 8:28:51 PM
+// Last updated: 3/25/2026, 8:36:14 PM
 1class Solution {
 2    public int calPoints(String[] operations) {
 3        Stack<Integer> stack=new Stack<>();
