@@ -1,4 +1,4 @@
-// Last updated: 3/26/2026, 9:24:04 AM
+// Last updated: 3/26/2026, 9:24:30 AM
 1class Solution {
 2    public int countStudents(int[] students, int[] sandwiches) {
 3        Stack<Integer> st=new Stack<>();
