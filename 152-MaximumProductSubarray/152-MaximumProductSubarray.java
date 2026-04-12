@@ -1,18 +1,15 @@
-// Last updated: 3/7/2026, 4:14:15 PM
+// Last updated: 4/12/2026, 3:14:35 PM
 1class Solution {
-2    public int maxProduct(int[] nums) {
-3        int n=nums.length;
-4        int minpro=nums[0];
-5        int maxpro=nums[0];
-6        int ans=nums[0];
-7        int c1,c2;
-8        for(int i=1;i<n;i++){
-9            c1=minpro*nums[i];
-10            c2=maxpro*nums[i];
-11            minpro=Math.min(nums[i],Math.min(c1,c2));
-12            maxpro=Math.max(nums[i],Math.max(c1,c2));
-13            ans=Math.max(ans,maxpro);
-14        }
-15        return ans;
-16    }
-17}
+2    public int diagonalSum(int[][] mat) {
+3        int r=mat.length;
+4        int p=0,s=0,k=r;
+5        for(int i=0;i<r;i++){
+6            p+=mat[i][i];
+7            s+=mat[i][--k];
+8        }
+9        if(r%2!=0){
+10            return p+s-mat[r/2][r/2];
+11        }
+12        return p+s;
+13    }
+14}
