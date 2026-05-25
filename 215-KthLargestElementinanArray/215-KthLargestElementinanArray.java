@@ -1,4 +1,4 @@
-// Last updated: 5/25/2026, 4:21:14 PM
+// Last updated: 5/25/2026, 4:21:34 PM
 1class Solution {
 2    public String predictPartyVictory(String senate) {
 3        Queue<Integer> radiant=new LinkedList<>();
