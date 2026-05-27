@@ -1,4 +1,4 @@
-// Last updated: 5/27/2026, 4:08:52 PM
+// Last updated: 5/27/2026, 4:09:05 PM
 1class Solution {
 2    public int numberOfSpecialChars(String word) {
 3        Set<Character> set = new HashSet<>();
