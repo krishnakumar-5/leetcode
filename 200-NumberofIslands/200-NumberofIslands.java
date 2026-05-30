@@ -1,18 +1,14 @@
-// Last updated: 5/30/2026, 3:00:31 PM
+// Last updated: 5/30/2026, 3:02:58 PM
 1class Solution {
 2    public int findCenter(int[][] edges) {
-3        int b[]=new int[1000000];
-4        int res=0;
-5        for(int i=0;i<edges.length;i++){ 
-6           b[edges[i][0]]++;
-7           b[edges[i][1]]++; 
-8           if(b[edges[i][0]]==edges.length){
-9               return edges[i][0];
-10           }
-11           if(b[edges[i][1]]==edges.length){
-12                return edges[i][1];
-13           } 
-14        }
-15        return res;
-16    }
-17}
+3        int a=edges[0][0];
+4        int b=edges[0][1];
+5        int c=edges[1][0];
+6        int d=edges[1][1];
+7        int ans=0;
+8        if(a==c||a==d)
+9            return a;
+10        else
+11            return b;
+12    }
+13}
