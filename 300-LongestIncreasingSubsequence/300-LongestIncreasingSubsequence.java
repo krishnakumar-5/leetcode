@@ -1,20 +1,23 @@
-// Last updated: 6/1/2026, 8:48:20 PM
-1class Solution {
-2    public int lengthOfLIS(int[] nums) {
-3        int n = nums.length;
-4        int dp[] = new int[n];
-5        Arrays.fill(dp,1);
-6        for(int i=1;i<n;i++){
-7            for(int j=0;j<i;j++){
-8                if(nums[j]<nums[i]){
-9                    dp[i] = Math.max(dp[i],dp[j]+1);
-10                }
-11            }
-12        }   
-13        int max = 0;
-14        for(int i=0;i<n;i++){
-15            max = Math.max(max,dp[i]);
-16        }
-17        return max;
-18    }
-19}
+// Last updated: 6/1/2026, 9:03:42 PM
+1public class Solution {
+2    public int numDecodings(String s) {
+3        if (s == null || s.length() == 0 || s.charAt(0) == '0') {
+4            return 0;
+5        }
+6        int n = s.length();
+7        int[] dp = new int[n + 1];
+8        dp[0] = 1;
+9        dp[1] = 1;
+10        for (int i = 2; i <= n; ++i) {
+11            int oneDigit = s.charAt(i - 1) - '0';
+12            int twoDigits = Integer.parseInt(s.substring(i - 2, i));
+13            if (oneDigit != 0) {
+14                dp[i] += dp[i - 1];
+15            }
+16            if (10 <= twoDigits && twoDigits <= 26) {
+17                dp[i] += dp[i - 2];
+18            }
+19        }
+20        return dp[n];
+21    }
+22}
