@@ -1,4 +1,4 @@
-// Last updated: 6/2/2026, 12:00:26 PM
+// Last updated: 6/2/2026, 12:00:31 PM
 1class Solution {
 2    public int longestCommonSubsequence(String text1, String text2) {
 3        int t1=text1.length();
