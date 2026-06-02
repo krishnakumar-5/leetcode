@@ -1,40 +1,25 @@
-// Last updated: 3/23/2026, 6:56:11 PM
-1/**
-2 * Definition for singly-linked list.
-3 * public class ListNode {
-4 *     int val;
-5 *     ListNode next;
-6 *     ListNode() {}
-7 *     ListNode(int val) { this.val = val; }
-8 *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-9 * }
-10 */
-11class Solution {
-12    public ListNode rotateRight(ListNode head, int k) {
-13        if(head==null){
-14            return null;
-15        }
-16        if(head.next==null){
-17            return head;
-18        }
-19        ListNode t=head;
-20        int c=0;
-21        while(t!=null){
-22            t=t.next;
-23            c++;
-24        }
-25        k=k%c;
-26        for(int i=0;i<k;i++){
-27            ListNode temp=head;
-28            while(temp.next.next!=null){
-29                temp=temp.next;
-30            }
-31            temp.next.next=head;
-32            head=temp.next;
-33            temp.next=null;
-34            
-35        }
-36         
-37        return head;
-38    }
-39}
+// Last updated: 6/2/2026, 6:08:49 PM
+1class Solution {
+2    public int minPathSum(int[][] grid) {
+3        int r=grid.length;
+4        int c=grid[0].length;
+5        for(int i=0;i<r;i++){
+6            for(int j=0;j<c;j++){
+7                if(i==0||j==0){
+8                    if(i==0&&j==0){
+9                         grid[i][j]=grid[i][j];
+10                    }else if(i==0){
+11                        grid[i][j]+=grid[i][j-1];
+12                    }else if(j==0){
+13                         grid[i][j]+=grid[i-1][j];
+14                    }
+15                }else{
+16                   grid[i][j]=Math.min(grid[i-1][j]+grid[i][j],grid[i][j-1]+grid[i][j]);
+17
+18                }
+19            }
+20        }
+21        return grid[r-1][c-1];
+22    
+23    }
+24}
