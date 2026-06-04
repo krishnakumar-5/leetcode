@@ -1,4 +1,4 @@
-// Last updated: 6/4/2026, 5:41:18 PM
+// Last updated: 6/4/2026, 5:44:20 PM
 1class Solution {
 2    public int longestSubarray(int[] nums) {
 3        int max=Integer.MIN_VALUE;
@@ -14,8 +14,8 @@
 13                }
 14                ws++;
 15            }
-16            max=Math.max(max,we-ws+1);
+16            max=Math.max(max,we-ws);
 17        }
-18        return max-1;
+18        return max;
 19    }
 20}
