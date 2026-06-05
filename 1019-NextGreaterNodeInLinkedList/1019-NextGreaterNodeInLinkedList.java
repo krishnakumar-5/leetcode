@@ -1,4 +1,4 @@
-// Last updated: 6/5/2026, 9:42:54 PM
+// Last updated: 6/5/2026, 9:43:13 PM
 1class Solution {
 2    public int[] nextLargerNodes(ListNode head) {
 3
@@ -10,24 +10,35 @@
 9            temp = temp.next;
 10        }
 11
-12        int[] ans = new int[n];
+12        ListNode prev = null, curr = head, next;
 13
-14        temp = head;
-15        int i = 0;
-16
-17        while (temp != null) {
-18
-19            ListNode next = temp.next;
+14        while (curr != null) {
+15            next = curr.next;
+16            curr.next = prev;
+17            prev = curr;
+18            curr = next;
+19        }
 20
-21            while (next != null && next.val <= temp.val) {
-22                next = next.next;
-23            }
-24
-25            ans[i++] = (next == null) ? 0 : next.val;
+21        int[] ans = new int[n];
+22        Stack<Integer> st = new Stack<>();
+23
+24        temp = prev;
+25        int idx = n - 1;
 26
-27            temp = temp.next;
-28        }
-29
-30        return ans;
-31    }
-32}
+27        while (temp != null) {
+28
+29            while (!st.isEmpty() && st.peek() <= temp.val) {
+30                st.pop();
+31            }
+32
+33            ans[idx] = st.isEmpty() ? 0 : st.peek();
+34
+35            st.push(temp.val);
+36
+37            idx--;
+38            temp = temp.next;
+39        }
+40
+41        return ans;
+42    }
+43}
