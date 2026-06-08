@@ -1,26 +1,25 @@
-// Last updated: 6/8/2026, 10:39:26 AM
+// Last updated: 6/8/2026, 10:48:58 AM
 1class Solution {
 2    public int[] pivotArray(int[] nums, int pivot) {
-3        Deque<Integer> s=new ArrayDeque<>();
-4        Deque<Integer> b=new ArrayDeque<>();
+3        int r=0;
+4        int res[]=new int[nums.length];
 5        for(int i=0;i<nums.length;i++){
 6            if(nums[i]<pivot){
-7                s.offer(nums[i]);
-8            }else if(nums[i]==pivot){
-9                b.offerFirst(nums[i]);
-10            }else{
-11                b.offer(nums[i]);
-12            }
-13        }
-14        int index=0;
-15        while(!s.isEmpty()){
-16            nums[index++]=s.poll();
-17        }
-18        while(!b.isEmpty()){
-19            nums[index++]=b.poll();
-20        }
-21        return nums;
-22        
-23       
-24    }
-25}
+7                res[r++]=nums[i];
+8            }
+9        }
+10        for(int i=0;i<nums.length;i++){
+11            if(nums[i]==pivot){
+12                res[r++]=nums[i];
+13            }
+14        }
+15        for(int i=0;i<nums.length;i++){
+16            if(nums[i]>pivot){
+17                res[r++]=nums[i];
+18            }
+19        }
+20        return res;
+21       
+22       
+23    }
+24}
