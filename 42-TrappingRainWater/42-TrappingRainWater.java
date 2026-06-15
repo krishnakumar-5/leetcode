@@ -1,4 +1,4 @@
-// Last updated: 6/15/2026, 4:16:14 PM
+// Last updated: 6/15/2026, 4:16:25 PM
 1class Solution {
 2    public int trap(int[] height) {
 3        if(height==null || height.length<3){
