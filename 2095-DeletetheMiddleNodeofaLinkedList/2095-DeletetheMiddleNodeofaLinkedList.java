@@ -1,4 +1,4 @@
-// Last updated: 6/15/2026, 12:24:00 PM
+// Last updated: 6/15/2026, 12:24:16 PM
 1/**
 2 * Definition for singly-linked list.
 3 * public class ListNode {
@@ -24,10 +24,7 @@
 23            slow=slow.next;
 24            fast=fast.next.next;
 25        }
-26
-27        temp.next=slow.next;
-28        return head;
-29
-30        
-31    }
-32}
+26        temp.next=slow.next;
+27        return head; 
+28    }
+29}
