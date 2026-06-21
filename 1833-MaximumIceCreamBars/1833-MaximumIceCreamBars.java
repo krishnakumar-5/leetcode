@@ -1,4 +1,4 @@
-// Last updated: 6/21/2026, 12:51:07 PM
+// Last updated: 6/21/2026, 12:51:12 PM
 1class Solution {
 2    public int maxIceCream(int[] costs, int coins) {
 3        Arrays.sort(costs);
