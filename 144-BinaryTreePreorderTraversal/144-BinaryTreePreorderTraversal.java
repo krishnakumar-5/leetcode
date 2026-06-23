@@ -1,42 +1,34 @@
-// Last updated: 6/23/2026, 11:09:03 AM
+// Last updated: 6/23/2026, 12:10:57 PM
 1class Solution {
-2    public String reverseStr(String s, int k) {
-3        int d=2*k;
-4        int l=0,r=d;
-5        if(k==1){
-6            return s;
-7        }
-8        if(s.length()<k){
-9            StringBuilder sb=new StringBuilder(s);
-10            return sb.reverse().toString();
+2    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+3        int l=0;
+4        int r=2;
+5        int c=0;
+6        if(n==0) return true;
+7        if(flowerbed.length==1){
+8            if(flowerbed[0]==0)
+9            return true;
+10            return false;
 11        }
-12        StringBuilder res=new StringBuilder();
-13        while(r<=s.length()){
-14            String str=s.substring(l,r);
-15            String s1=s.substring(l,((l+r)/2));
-16            String s2=s.substring((l+r)/2,r);
-17            StringBuilder sb=new StringBuilder(s1);
-18            sb.reverse();
-19            sb.append(s2);
-20            res.append(sb);
-21            l=r;
-22            r+=d;
-23        }
-24        if(s.length()-l>=k&&s.length()-l<d){
-25            String s3=s.substring(l,s.length());
-26            String s4=s.substring(l,l+k);
-27            String s5=s.substring(l+k,s.length());
-28            StringBuilder sb1=new StringBuilder(s4);
-29            sb1.reverse();
-30            sb1.append(s5);
-31            res.append(sb1);
-32        }else{
-33            String s6=s.substring(l,s.length());
-34            StringBuilder sb2=new StringBuilder(s6);
-35            sb2.reverse();
-36            res.append(sb2);
-37        }
-38        return res.toString();
-39
-40    }
-41}
+12        if(flowerbed[0]==0&&flowerbed[1]==0){
+13            c++;
+14            flowerbed[0]=1;
+15        }
+16        if(flowerbed[flowerbed.length-1]==0&&flowerbed[flowerbed.length-2]==0){
+17            c++;
+18            flowerbed[flowerbed.length-1]=1;
+19        }
+20        while(r<flowerbed.length){
+21            if(flowerbed[l]==0&&flowerbed[r]==0&&flowerbed[l+1]==0){
+22                c++;
+23                flowerbed[l+1]=1;
+24            }
+25            l++;
+26            r++;
+27        }
+28        if(c>=n)
+29        return true;
+30
+31        return false;
+32    }
+33}
