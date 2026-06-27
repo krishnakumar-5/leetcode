@@ -1,4 +1,4 @@
-// Last updated: 6/27/2026, 1:49:16 PM
+// Last updated: 6/27/2026, 1:49:26 PM
 1class Solution {
 2    public boolean judgeCircle(String moves) {
 3        int l=0,r=0,u=0,d=0;
