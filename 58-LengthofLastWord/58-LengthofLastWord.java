@@ -1,4 +1,4 @@
-// Last updated: 6/30/2026, 6:25:55 PM
+// Last updated: 6/30/2026, 6:26:03 PM
 1class Solution {
 2    public int firstMissingPositive(int[] nums) {
 3        Arrays.sort(nums);
