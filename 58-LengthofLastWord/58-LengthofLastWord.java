@@ -1,24 +1,25 @@
-// Last updated: 6/30/2026, 6:14:53 PM
+// Last updated: 6/30/2026, 6:25:55 PM
 1class Solution {
-2     static{
-3    Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-4            try (java.io.FileWriter fw = new java.io.FileWriter("display_runtime.txt")) {
-5                fw.write("0");
-6            } catch (Exception e) {
-7            }
-8        }));
-9     }
-10    public List<List<String>> groupAnagrams(String[] strs) {
-11        Map<String,List<String>> map=new LinkedHashMap<>();
-12        for(String s:strs){
-13            char[] k=s.toCharArray();
-14            Arrays.sort(k);
-15            String key=new String(k);
-16            if(!map.containsKey(key)){
-17                map.put(key,new ArrayList<>());
+2    public int firstMissingPositive(int[] nums) {
+3        Arrays.sort(nums);
+4        int num=1;
+5        boolean flag=true;
+6        Set<Integer> set=new LinkedHashSet<>();
+7        for(int i=0;i<nums.length;i++){
+8            if(!set.add(nums[i])){
+9                continue;
+10            }
+11            if(nums[i]>0){
+12                if(nums[i]==num){
+13                    num++;
+14                }else{
+15                    return num;
+16                }
+17                flag=false;
 18            }
-19            map.get(key).add(s);
-20        }
-21        return new ArrayList<>(map.values());
-22    }
-23}
+19        }
+20        if(!flag)
+21        return nums[nums.length-1]+1;
+22        return 1;
+23    }
+24}
