@@ -1,4 +1,4 @@
-// Last updated: 7/2/2026, 11:16:33 AM
+// Last updated: 7/2/2026, 11:16:37 AM
 1class Solution {
 2    public int countPrimeSetBits(int left, int right) {
 3        int c=0;
