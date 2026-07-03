@@ -1,4 +1,4 @@
-// Last updated: 7/3/2026, 5:56:15 PM
+// Last updated: 7/3/2026, 5:56:21 PM
 1class Solution {
 2    public int finalValueAfterOperations(String[] operations) {
 3        int n=operations.length;
