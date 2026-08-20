@@ -1,26 +1,34 @@
 class Solution {
     public int[] resultArray(int[] nums) {
-        int n=nums.length;
-        if(n<=2){
+
+        int n = nums.length;
+
+        if (n <= 2)
             return nums;
-        }
-        List<Integer> a=new ArrayList<>();
+
+        List<Integer> a = new ArrayList<>();
+        List<Integer> b = new ArrayList<>();
+
         a.add(nums[0]);
-        a.add(nums[1]);
-        int l=0,r=1;
-        for(int i=2;i<nums.length;i++){
-            if(a.get(l)>a.get(r)){
-               a.add(l+1,nums[i]);
-               l++;
-            }else{
-               a.add(nums[i]);
-            }
-            r++;
+        b.add(nums[1]);
+
+        for (int i = 2; i < n; i++) {
+
+            if (a.get(a.size() - 1) > b.get(b.size() - 1))
+                a.add(nums[i]);
+            else
+                b.add(nums[i]);
         }
-        int res[]=new int[nums.length];
-        for(int i=0;i<nums.length;i++){
-            res[i]=a.get(i);
-        }
+
+        int[] res = new int[n];
+        int k = 0;
+
+        for (int x : a)
+            res[k++] = x;
+
+        for (int x : b)
+            res[k++] = x;
+
         return res;
     }
 }
