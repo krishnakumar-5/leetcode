@@ -4,7 +4,7 @@ class Solution {
         if(n<=2){
             return nums;
         }
-        List<Integer> a=new LinkedList<>();
+        List<Integer> a=new ArrayList<>();
         a.add(nums[0]);
         a.add(nums[1]);
         int l=0,r=1;
