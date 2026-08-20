@@ -5,26 +5,21 @@ class Solution {
             return nums;
         }
         List<Integer> a=new LinkedList<>();
-        List<Integer> b=new LinkedList<>();
         a.add(nums[0]);
-        b.add(nums[1]);
-        int ia=0,ib=0;
+        a.add(nums[1]);
+        int l=0,r=1;
         for(int i=2;i<nums.length;i++){
-            if(a.get(ia)>b.get(ib)){
-                a.add(nums[i]);
-                ia++;
+            if(a.get(l)>a.get(r)){
+               a.add(l+1,nums[i]);
+               l++;
             }else{
-                b.add(nums[i]);
-                ib++;
+               a.add(nums[i]);
             }
+            r++;
         }
         int res[]=new int[nums.length];
-        int ind=0;
-        for(int i=0;i<a.size();i++){
-            res[ind++]=a.get(i);
-        }
-        for(int i=0;i<b.size();i++){
-            res[ind++]=b.get(i);
+        for(int i=0;i<nums.length;i++){
+            res[i]=a.get(i);
         }
         return res;
     }
