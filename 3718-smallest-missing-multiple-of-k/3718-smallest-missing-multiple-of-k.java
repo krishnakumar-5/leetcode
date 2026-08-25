@@ -1,16 +1,20 @@
 class Solution {
     public int missingMultiple(int[] nums, int k) {
-        Set<Integer> set=new LinkedHashSet<>();
+        Arrays.sort(nums);
+        int in=1;
+        int prev=0;
         for(int i=0;i<nums.length;i++){
             if(nums[i]%k==0){
-                set.add(nums[i]);
+                if(prev!=nums[i]){
+                if(k*in!=nums[i]){
+                    return k*in;
+                }else{
+                    in++;
+                    prev=nums[i];
+                }
+                }
             }
         }
-        for(int i=1;i<=nums.length+1;i++){
-            if(!set.contains(k*i)){
-                return k*i;
-            }
-        }
-        return 0;
+        return k*in;
     }
 }
