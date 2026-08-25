@@ -6,11 +6,11 @@ class Solution {
                 set.add(nums[i]);
             }
         }
-        for(int i=1;i<=nums.length+1;i++){
+        for(int i=1;i<=nums.length;i++){
             if(!set.contains(k*i)){
                 return k*i;
             }
         }
-        return 0;
+        return k*(nums.length+1);
     }
 }
