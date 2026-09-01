@@ -1,10 +1,10 @@
 class Solution {
     public String[] divideString(String s, int k, char fill) {
         int x=s.length()%k;
-        String str=s;
+        StringBuilder str=new StringBuilder(s);
         if(x!=0){
         for(int i=0;i<k-x;i++){
-            str+=fill;
+            str.append(fill);
         }
         }
         String res[]=new String[str.length()/k];
