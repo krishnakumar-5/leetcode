@@ -1,23 +1,16 @@
 class Solution {
     public boolean uniformArray(int[] nums1) {
-        Arrays.sort(nums1);
-        if(nums1[0]%2==0){
-            for(int i=1;i<nums1.length;i++){
-                if(nums1[i]%2!=0){
-                    if((nums1[i]-nums1[0])%2!=0){
-                        return false;
-                    }
-                }
-            }
-        }else{
-            for(int i=1;i<nums1.length;i++){
-                if(nums1[i]%2==0){
-                    if((nums1[i]-nums1[0])%2==0){
-                        return false;
-                    }
-                }
+        int minimum = Integer.MAX_VALUE;
+        boolean allEven = true;
+
+        for (int num : nums1) {
+            minimum = Math.min(minimum, num);
+
+            if (num % 2 == 1) {
+                allEven = false;
             }
         }
-        return true;
+
+        return allEven || minimum % 2 == 1;
     }
 }
