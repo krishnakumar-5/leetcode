@@ -10,10 +10,7 @@ class Solution {
                 set.add(nums[i]);
             }
         }
-        int res[]=new int[2];
-        res[0]=c;
-        res[1]=set.size();
-        return res;
+        return new int[] {c,set.size()};
 
 
     }
