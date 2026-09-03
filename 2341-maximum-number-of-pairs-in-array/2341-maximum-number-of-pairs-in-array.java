@@ -1,17 +1,13 @@
 class Solution {
     public int[] numberOfPairs(int[] nums) {
-        Set<Integer> set=new LinkedHashSet<>();
-        int c=0;
-        for(int i=0;i<nums.length;i++){
-            if(set.contains(nums[i])){
-                set.remove(nums[i]);
-                c++;
-            }else{
-                set.add(nums[i]);
-            }
+        int[] cnt = new int[101];
+        for (int x : nums) {
+            ++cnt[x];
         }
-        return new int[] {c,set.size()};
-
-
+        int y = 0;
+        for (int x : cnt) {
+            y += x / 2;
+        }
+        return new int[] {y, nums.length - y * 2};
     }
 }
